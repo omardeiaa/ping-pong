@@ -6,8 +6,6 @@ used package: turtle
 developer name: Omar
 """
 
-
-
 import turtle
 
 
@@ -73,3 +71,28 @@ while True:
 
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
+
+    if ball.ycor() > 350:
+        ball.sety(350)
+        ball.dy *= -1
+
+    if ball.ycor() < -350:
+        ball.sety(-350)
+        ball.dy *= -1
+
+    if ball.xcor() > 550:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+    if ball.xcor() < -550:
+        ball.goto(0, 0)
+        ball.dx *= -1
+
+    if (ball.xcor() > 450 and ball.xcor() < 460) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
+        ball.setx(450)
+        ball.dx *= -1
+
+    if (ball.xcor() < -450 and ball.xcor() < -460) and (ball.ycor() > paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
+        ball.setx(-450)
+        ball.dx *= -1
+
